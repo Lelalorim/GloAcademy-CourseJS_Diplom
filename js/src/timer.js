@@ -1,9 +1,9 @@
 function countTimer(deadline) {
 
-	const timerHours = document.querySelector('#timer-hours'),
-		timerMinutes = document.querySelector('#timer-minutes'),
-		timerDays = document.querySelector('#timer-days'),
-		timerSeconds = document.querySelector('#timer-seconds');
+	const timerHours = document.querySelectorAll('.timer-hours'),
+		timerMinutes = document.querySelectorAll('.timer-minutes'),
+		timerDays = document.querySelectorAll('.timer-days'),
+		timerSeconds = document.querySelectorAll('.timer-seconds');
 
 	function getTimeRemaining() {
 
@@ -29,10 +29,18 @@ function countTimer(deadline) {
 
 		const addZero = digit => digit < 10 ? `0${digit}` : digit;
 
-		timerDays.textContent = timer.days < 0 ? '00' : addZero(timer.days);
-		timerHours.textContent = timer.hours < 0 ? '00' : addZero(timer.hours);
-		timerMinutes.textContent = timer.minutes < 0 ? '00' : addZero(timer.minutes);
-		timerSeconds.textContent = timer.seconds < 0 ? '00' : addZero(timer.seconds);
+		timerDays.forEach(element => {
+        element.textContent = timer.days < 0 ? '00' : addZero(timer.days);
+      });
+		timerHours.forEach(element => {
+        element.textContent = timer.hours < 0 ? '00' : addZero(timer.hours);
+      });
+		timerMinutes.forEach(element => {
+        element.textContent = timer.minutes < 0 ? '00' : addZero(timer.minutes);
+      });
+		timerSeconds.forEach(element => {
+        element.textContent = timer.seconds < 0 ? '00' : addZero(timer.seconds);
+      });
 
 		if (timer.timeRemaining < 0) {
 			clearInterval(idInterval);
