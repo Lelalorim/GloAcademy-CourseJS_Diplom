@@ -39,6 +39,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 
 "use strict";
 <<<<<<< HEAD
+<<<<<<< HEAD
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/slider */ \"./js/src/slider.js\");\n\nvar carouselBenefits = new _src_slider__WEBPACK_IMPORTED_MODULE_0__.default({\n  main: '.benefits-inner',\n  wrap: '.benefits-wrap',\n  next: '.benefits__arrow--right',\n  prev: '.benefits__arrow--left',\n  infinity: true,\n  position: 0,\n  slidesToShow: 3,\n  responsive: [{\n    breakpoint: 577,\n    slideToShow: 3\n  }, {\n    breakpoint: 576,\n    slideToShow: 1\n  }]\n});\ncarouselBenefits.init();\n\n//# sourceURL=webpack://JS19_Diplom/./js/index.js?");
 
 /***/ }),
@@ -65,6 +66,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar togglePopup = function togglePopup() {\n  var popupContent = document.querySelector('.header-modal'),\n      overlay = document.querySelector('.overlay');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.fancyboxModal')) {\n      event.preventDefault();\n      popupContent.classList.remove('header-modal');\n      overlay.style.display = 'block';\n    }\n\n    if (target.closest('.header-modal__close')) {\n      popupContent.classList.add('header-modal');\n      overlay.style = '';\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (togglePopup);\n\n//# sourceURL=webpack://JS19_Diplom/./js/src/popup.js?");
 >>>>>>> popup
+=======
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_calculator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/calculator */ \"./js/src/calculator.js\");\n\n\ntry {\n  //if (document.body.className === 'balkony') {\n  (0,_src_calculator__WEBPACK_IMPORTED_MODULE_0__.default)(1000); //}\n} catch (err) {\n  console.warn('На этой странице нет калькулятора');\n  console.error(err);\n}\n\n//# sourceURL=webpack://JS19_Diplom/./js/index.js?");
+
+/***/ }),
+
+/***/ "./js/src/calculator.js":
+/*!******************************!*\
+  !*** ./js/src/calculator.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar calc = function calc() {\n  var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;\n  var calcBlock = document.getElementById('calc'),\n      calcType = document.getElementById('calc-type'),\n      calcTypeMaterial = document.getElementById('calc-type-material'),\n      calcSquare = document.getElementById('calc-input'),\n      totalValue = document.getElementById('calc-total');\n\n  var countSum = function countSum() {\n    var total = 0;\n    var typeValue = +calcType.options[calcType.selectedIndex].value,\n        typeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value,\n        squareValue = +calcSquare.value;\n\n    if (typeValue && squareValue && typeMaterialValue) {\n      total = price * typeValue * squareValue * typeMaterialValue;\n      totalValue.value = total;\n    }\n  };\n\n  calcBlock.addEventListener('change', function (event) {\n    var target = event.target;\n\n    if (target.matches('#calc-type') || target.matches('#calc-input') || target.matches('#calc-type-material')) {\n      countSum();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calc);\n\n//# sourceURL=webpack://JS19_Diplom/./js/src/calculator.js?");
+>>>>>>> calculator
 
 /***/ }),
 

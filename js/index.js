@@ -1,5 +1,6 @@
 import SliderCarousel from "./src/slider";
 import togglePopup from "./src/popup";
+import calc from './src/calculator';
 
 const carouselBenefits = new SliderCarousel({
   main: '.benefits-inner',
@@ -23,4 +24,11 @@ const carouselBenefits = new SliderCarousel({
 carouselBenefits.init();
 togglePopup();
 
+try{
 
+  calc(1000);
+
+} catch(err) {
+  console.warn('На этой странице нет калькулятора');
+  console.error(err);
+}
