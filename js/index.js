@@ -1,4 +1,5 @@
 import SliderCarousel from "./src/slider";
+import togglePopup from "./src/popup";
 
 const carouselBenefits = new SliderCarousel({
   main: '.benefits-inner',
@@ -20,3 +21,6 @@ const carouselBenefits = new SliderCarousel({
 })
 
 carouselBenefits.init();
+togglePopup();
+
+
