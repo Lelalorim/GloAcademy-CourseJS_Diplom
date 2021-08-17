@@ -32,3 +32,6 @@ try{
   console.warn('На этой странице нет калькулятора');
   console.error(err);
 }
+import countTimer from './src/timer';
+
+countTimer('20 august 2021 21:00');
