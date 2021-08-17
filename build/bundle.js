@@ -35,9 +35,21 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /*!*********************!*\
   !*** ./js/index.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://JS19_Diplom/./js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_calculator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/calculator */ \"./js/src/calculator.js\");\n\n\ntry {\n  //if (document.body.className === 'balkony') {\n  (0,_src_calculator__WEBPACK_IMPORTED_MODULE_0__.default)(1000); //}\n} catch (err) {\n  console.warn('На этой странице нет калькулятора');\n  console.error(err);\n}\n\n//# sourceURL=webpack://JS19_Diplom/./js/index.js?");
+
+/***/ }),
+
+/***/ "./js/src/calculator.js":
+/*!******************************!*\
+  !*** ./js/src/calculator.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar calc = function calc() {\n  var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;\n  var calcBlock = document.getElementById('calc'),\n      calcType = document.getElementById('calc-type'),\n      calcTypeMaterial = document.getElementById('calc-type-material'),\n      calcSquare = document.getElementById('calc-input'),\n      totalValue = document.getElementById('calc-total');\n\n  var countSum = function countSum() {\n    var total = 0;\n    var typeValue = +calcType.options[calcType.selectedIndex].value,\n        typeMaterialValue = +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value,\n        squareValue = +calcSquare.value;\n\n    if (typeValue && squareValue && typeMaterialValue) {\n      total = price * typeValue * squareValue * typeMaterialValue;\n      totalValue.value = total;\n    }\n  };\n\n  calcBlock.addEventListener('change', function (event) {\n    var target = event.target;\n\n    if (target.matches('#calc-type') || target.matches('#calc-input') || target.matches('#calc-type-material')) {\n      countSum();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (calc);\n\n//# sourceURL=webpack://JS19_Diplom/./js/src/calculator.js?");
 
 /***/ }),
 
@@ -373,6 +385,18 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -388,6 +412,17 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
