@@ -16,9 +16,8 @@ document.addEventListener('scroll', ()=> {
   }
 });
 
-document.addEventListener('click', event=> {
+document.addEventListener('click', event=> {  
   
-  event.preventDefault();
   const target = event.target;
 
   if(target.matches('.smooth-scroll__img')) {
