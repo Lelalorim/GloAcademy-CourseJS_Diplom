@@ -1,6 +1,11 @@
 import SliderCarousel from "./src/slider";
 import togglePopup from "./src/popup";
 import calc from './src/calculator';
+import countTimer from './src/timer';
+import smoothScroll from './src/smoothScroll';
+
+const anchorSmoothScroll = document.querySelector('.smooth-scroll');
+anchorSmoothScroll.classList.add('js-elem-hide');
 
 const carouselBenefits = new SliderCarousel({
   main: '.benefits-inner',
@@ -22,7 +27,10 @@ const carouselBenefits = new SliderCarousel({
 })
 
 carouselBenefits.init();
+
 togglePopup();
+
+countTimer('20 august 2021 21:00');
 
 try{
 
@@ -32,6 +40,26 @@ try{
   console.warn('На этой странице нет калькулятора');
   console.error(err);
 }
-import countTimer from './src/timer';
 
-countTimer('20 august 2021 21:00');
+document.addEventListener('scroll', ()=> {
+  const trackBlock = document.getElementById('benefits'),
+    requiredScrollValue = trackBlock.offsetTop;
+
+  if (window.pageYOffset > requiredScrollValue) {
+    anchorSmoothScroll.classList.remove('js-elem-hide');
+  } else {
+    anchorSmoothScroll.classList.add('js-elem-hide');
+  }
+});
+
+document.addEventListener('click', event=> {  
+  
+  const target = event.target;
+
+  if(target.matches('.smooth-scroll__img')) {
+    const id = 'header';
+    smoothScroll(id);
+  }
+
+});
+

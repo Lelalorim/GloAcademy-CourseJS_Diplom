@@ -1665,6 +1665,10 @@ input.error {
   transform: rotate(90deg);
 }
 
+.js-elem-hide {
+  opacity: 0;
+}
+
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
