@@ -16,6 +16,7 @@ const calc = (price = 100) => {
 
       total = price * typeValue * squareValue * typeMaterialValue;
       totalValue.value = total;
+      localStorage.setItem('calcTotalValue' ,total);
     }
 
   };
