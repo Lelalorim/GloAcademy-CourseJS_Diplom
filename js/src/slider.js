@@ -4,6 +4,7 @@ class SliderCarousel {
     wrap,
     next,
     prev,
+    styleName = main.split('-')[0],
     infinity = false,
     position = 0,
     slidesToShow = 3,
@@ -15,6 +16,7 @@ class SliderCarousel {
     this.prev = document.querySelector(prev);
     this.next = document.querySelector(next);
     this.slidesToShow = slidesToShow;
+    this.styleId = styleName.substring(1);
     this.options = {
       position,
       infinity,
@@ -40,31 +42,31 @@ class SliderCarousel {
   }
 
   addNewClass() {
-    this.main.classList.add('js-slider');
-    this.wrap.classList.add('js-slider__wrap');
+    this.main.classList.add(`js-slider-${this.styleId}`);
+    this.wrap.classList.add(`js-slider-${this.styleId}__wrap`);
     for ( const item of this.slides) {
-      item.classList.add('js-slider__item');
+      item.classList.add(`js-slider-${this.styleId}__item`);
     }
   }
 
   addStyle() {
-    let style = document.getElementById('sliderCarousel-style');
+    let style = document.getElementById(`carouselSlider-${this.styleId}`);
     if (!style) {
       style = document.createElement('style');
-      style.id = 'sliderCarousel-style';
+      style.id = `carouselSlider-${this.styleId}`;
     }
     style.textContent = `
-      .js-slider {
+      .js-slider-${this.styleId} {
         display: flex;
         overflow: hidden !important;
       }
-      .js-slider__wrap {
+      .js-slider-${this.styleId}__wrap {
         display: flex !important;
         max-width: 100%;
         transition: transform 0.5s !important;
         will-change: transform !important;
       }
-      .js-slider__item {
+      .js-slider-${this.styleId}__item {
         display: flex;
         flex-direction: column;
         max-width: ${this.options.widthSlide}% !important;      
