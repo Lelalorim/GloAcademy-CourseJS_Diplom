@@ -1,6 +1,7 @@
-const smoothScroll = target => {	
+const smoothScroll = () => {	
 
-	document.getElementById(target).scrollIntoView({
+	window.scrollTo({
+		top: 0,
 		behavior: 'smooth',
 	});
 
