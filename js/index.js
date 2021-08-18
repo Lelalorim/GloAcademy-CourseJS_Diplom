@@ -3,6 +3,7 @@ import togglePopup from "./src/popup";
 import calc from './src/calculator';
 import countTimer from './src/timer';
 import smoothScroll from './src/smoothScroll';
+import sertificateModal from "./src/sertificateModal";
 
 const anchorSmoothScroll = document.querySelector('.smooth-scroll');
 anchorSmoothScroll.classList.add('js-elem-hide');
@@ -28,8 +29,11 @@ const carouselBenefits = new SliderCarousel({
 
 carouselBenefits.init();
 
+sertificateModal();
+
 togglePopup('.btn-jsHeaderModal', '.header-modal');
 togglePopup('.btn-jsServicesModal', '.services-modal');
+togglePopup('.sertificate-document', '.sertificate-modal');
 
 countTimer('20 august 2021 21:00');
 
@@ -56,10 +60,10 @@ document.addEventListener('scroll', ()=> {
 document.addEventListener('click', event=> {  
   
   const target = event.target;
+  console.log('target: ', target);
 
   if(target.matches('.smooth-scroll__img')) {
     smoothScroll();
   }
 
 });
-
