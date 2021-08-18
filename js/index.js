@@ -28,7 +28,8 @@ const carouselBenefits = new SliderCarousel({
 
 carouselBenefits.init();
 
-togglePopup();
+togglePopup('.btn-jsHeaderModal', '.header-modal');
+togglePopup('.btn-jsServicesModal', '.services-modal');
 
 countTimer('20 august 2021 21:00');
 

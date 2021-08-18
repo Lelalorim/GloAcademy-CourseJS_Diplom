@@ -29,6 +29,8 @@ function countTimer(deadline) {
 
 		const addZero = digit => digit < 10 ? `0${digit}` : digit;
 
+		
+
 		timerDays.forEach(element => {
         element.textContent = timer.days < 0 ? '00' : addZero(timer.days);
       });

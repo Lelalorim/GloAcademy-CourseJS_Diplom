@@ -1,16 +1,16 @@
-const togglePopup = () => {
-  const popupContent = document.querySelector('.header-modal'),
+const togglePopup = (btnSelector, modalSelector) => {
+  const popupContent = document.querySelector(modalSelector),
     overlay = document.querySelector('.overlay');
   
   document.addEventListener('click', event => {
     const target = event.target;
-    if (target.closest('.fancyboxModal')) {      
+    if (target.closest(btnSelector)) {      
       event.preventDefault();
-      popupContent.classList.remove('header-modal');
+      popupContent.classList.remove(modalSelector.substring(1));
       overlay.style.display = 'block';
     }
-    if (target.closest('.header-modal__close')) {
-      popupContent.classList.add('header-modal');
+    if (target.closest(`${modalSelector}__close`)) {
+      popupContent.classList.add(modalSelector.substring(1));
       overlay.style = '';
     }
 
