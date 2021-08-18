@@ -4,6 +4,8 @@ import calc from './src/calculator';
 import countTimer from './src/timer';
 import smoothScroll from './src/smoothScroll';
 import sertificateModal from "./src/sertificateModal";
+import sendForm from "./src/sendForm";
+import validateInputs from "./src/validate";
 
 const anchorSmoothScroll = document.querySelector('.smooth-scroll');
 anchorSmoothScroll.classList.add('js-elem-hide');
@@ -30,6 +32,7 @@ const carouselBenefits = new SliderCarousel({
 carouselBenefits.init();
 
 sertificateModal();
+validateInputs();
 
 togglePopup('.btn-jsHeaderModal', '.header-modal');
 togglePopup('.btn-jsServicesModal', '.services-modal');
@@ -64,6 +67,11 @@ document.addEventListener('click', event=> {
 
   if(target.matches('.smooth-scroll__img')) {
     smoothScroll();
+  }
+
+  if(target.closest('.feedback')) {
+    sendForm();
+    console.log('отправка формы');
   }
 
 });
