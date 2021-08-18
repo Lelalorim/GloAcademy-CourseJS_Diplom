@@ -4,6 +4,7 @@ import calc from './src/calculator';
 import countTimer from './src/timer';
 import smoothScroll from './src/smoothScroll';
 import sertificateModal from "./src/sertificateModal";
+import servicesSlider from "./src/servicesSlider";
 
 const anchorSmoothScroll = document.querySelector('.smooth-scroll');
 anchorSmoothScroll.classList.add('js-elem-hide');
@@ -30,6 +31,7 @@ const carouselBenefits = new SliderCarousel({
 carouselBenefits.init();
 
 sertificateModal();
+servicesSlider();
 
 togglePopup('.btn-jsHeaderModal', '.header-modal');
 togglePopup('.btn-jsServicesModal', '.services-modal');
@@ -60,7 +62,6 @@ document.addEventListener('scroll', ()=> {
 document.addEventListener('click', event=> {  
   
   const target = event.target;
-  console.log('target: ', target);
 
   if(target.matches('.smooth-scroll__img')) {
     smoothScroll();
