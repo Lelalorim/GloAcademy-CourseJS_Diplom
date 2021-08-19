@@ -23,7 +23,24 @@ const carouselBenefits = new SliderCarousel({
     ],
   });
 
+const carouselServices = new SliderCarousel({
+    main: '.services-inner',
+    wrap: '.services-wrap',
+    next: '.services__arrow--right',
+    prev: '.services__arrow--left',
+    infinity: false,
+    position: 0,
+    slidesToShow: 2,
+    responsive: [
+      {
+        breakpoint: 576,
+        slideToShow: 1,
+      },
+    ],
+  });
+
   carouselBenefits.init();
+  carouselServices.init();
 
 smoothScroll();
 sertificateModal();

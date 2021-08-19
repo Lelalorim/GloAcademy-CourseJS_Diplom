@@ -6,7 +6,6 @@ const validateInputs = () => {
 
   document.addEventListener('input', event => {
     const target = event.target;
-    console.log('target: ', target);
     const phoneNumber = /телефон/gi,
       nameInput = /имя/gi;
 
