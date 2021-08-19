@@ -1,5 +1,4 @@
 const sertificateModal = () => {
-  console.log('модалка сертификата');
 
   const sertModal = document.createElement('div');
   sertModal.classList.add('sertificate-modal--opened', 'sertificate-modal');
@@ -16,6 +15,8 @@ const sertificateModal = () => {
       style = document.createElement('style');
       style.id = 'js-sertificateModal';
     }
+  const heightWindow = document.documentElement.clientHeight;
+  const widthWindow = document.documentElement.clientWidth;
 
   style.textContent = `
     .sertificate-modal--opened {
@@ -26,7 +27,11 @@ const sertificateModal = () => {
       z-index: 9999;
     }
     .sertificate-modal {
-        display: none;
+      display: none;
+    }
+    .sertificate-img {
+      max-height: ${heightWindow}px;
+      max-width: 420px;
     }
     .sertificate-modal__close {
       position: absolute;

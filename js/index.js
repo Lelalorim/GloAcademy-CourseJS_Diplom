@@ -7,18 +7,16 @@ import sertificateModal from "./src/sertificateModal";
 import sendForm from "./src/sendForm";
 import validateInputs from "./src/validate";
 
-const anchorSmoothScroll = document.querySelector('.smooth-scroll');
-anchorSmoothScroll.classList.add('js-elem-hide');
-
 const carouselBenefits = new SliderCarousel({
-  main: '.benefits-inner',
-  wrap: '.benefits-wrap',
-  next: '.benefits__arrow--right',
-  prev: '.benefits__arrow--left',
-  infinity: true,
-  position: 0,
-  slidesToShow: 3,
-  responsive: [{
+    main: '.benefits-inner',
+    wrap: '.benefits-wrap',
+    next: '.benefits__arrow--right',
+    prev: '.benefits__arrow--left',
+    infinity: true,
+    position: 0,
+    slidesToShow: 3,
+    responsive: [
+      {
         breakpoint: 577,
         slideToShow: 3,
       },
@@ -27,10 +25,11 @@ const carouselBenefits = new SliderCarousel({
         slideToShow: 1,
       },
     ],
-})
+  });
 
-carouselBenefits.init();
+  carouselBenefits.init();
 
+smoothScroll();
 sertificateModal();
 validateInputs();
 
@@ -48,17 +47,6 @@ try{
   console.warn('На этой странице нет калькулятора');
   console.error(err);
 }
-
-document.addEventListener('scroll', ()=> {
-  const trackBlock = document.getElementById('benefits'),
-    requiredScrollValue = trackBlock.offsetTop;
-
-  if (window.pageYOffset > requiredScrollValue) {
-    anchorSmoothScroll.classList.remove('js-elem-hide');
-  } else {
-    anchorSmoothScroll.classList.add('js-elem-hide');
-  }
-});
 
 document.addEventListener('click', event=> {  
   
