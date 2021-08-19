@@ -7,11 +7,11 @@ const togglePopup = (btnSelector, modalSelector) => {
     if (target.closest(btnSelector)) {      
       event.preventDefault();
       popupContent.classList.remove(modalSelector.substring(1));
-      overlay.style.display = 'block';
+      overlay.classList.toggle('overlay-active');
     }
     if (target.closest(`${modalSelector}__close`)) {
       popupContent.classList.add(modalSelector.substring(1));
-      overlay.style = '';
+      overlay.classList.toggle('overlay-active');
     }
 
   });

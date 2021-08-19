@@ -15,6 +15,9 @@ h2 span {
 h3 {
   text-transform: uppercase;
 }
+.overlay-active {
+  display: block !important;
+}
 .text-normal {
   font-family: "NeoSansCyr-Medium", sans-serif !important;
 }

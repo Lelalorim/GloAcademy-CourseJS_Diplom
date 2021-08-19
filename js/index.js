@@ -17,10 +17,6 @@ const carouselBenefits = new SliderCarousel({
     slidesToShow: 3,
     responsive: [
       {
-        breakpoint: 577,
-        slideToShow: 3,
-      },
-      {
         breakpoint: 576,
         slideToShow: 1,
       },
@@ -32,6 +28,7 @@ const carouselBenefits = new SliderCarousel({
 smoothScroll();
 sertificateModal();
 validateInputs();
+sendForm();
 
 togglePopup('.btn-jsHeaderModal', '.header-modal');
 togglePopup('.btn-jsServicesModal', '.services-modal');
@@ -51,15 +48,9 @@ try{
 document.addEventListener('click', event=> {  
   
   const target = event.target;
-  console.log('target: ', target);
 
   if(target.matches('.smooth-scroll__img')) {
     smoothScroll();
-  }
-
-  if(target.closest('.feedback')) {
-    sendForm();
-    console.log('отправка формы');
   }
 
 });
