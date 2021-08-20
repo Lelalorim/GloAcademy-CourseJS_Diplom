@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack serve"
+    "build": "webpack serve",
+    "prod": "webpack"
   },
   "repository": {
     "type": "git",
