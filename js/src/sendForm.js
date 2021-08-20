@@ -5,7 +5,7 @@ const sendForm = () => {
     const target = event.target,
       phoneInput = target.querySelector('input[placeholder*=телефон]'),
       nameInputs = target.querySelector('input[placeholder*=имя]'),
-      regForCheckPhone = /^\+?\d{11,16}$/,
+      regForCheckPhone = /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/,
       regForCheckName = /[a-zа-я]/gi;
       
     event.preventDefault();

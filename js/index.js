@@ -6,6 +6,7 @@ import smoothScroll from './src/smoothScroll';
 import sertificateModal from "./src/sertificateModal";
 import sendForm from "./src/sendForm";
 import validateInputs from "./src/validate";
+import maskPhone from "./src/maskPhone";
 
 const carouselBenefits = new SliderCarousel({
     main: '.benefits-inner',
@@ -47,8 +48,11 @@ sertificateModal();
 validateInputs();
 sendForm();
 
+maskPhone('input[name="phone"]');
+
 togglePopup('.btn-jsHeaderModal', '.header-modal');
 togglePopup('.btn-jsServicesModal', '.services-modal');
+togglePopup('.sertificate-document', '.sertificate-modal');
 togglePopup('.sertificate-document', '.sertificate-modal');
 
 countTimer('20 august 2021 21:00');
@@ -59,7 +63,6 @@ try{
 
 } catch(err) {
   console.warn('На этой странице нет калькулятора');
-  console.error(err);
 }
 
 document.addEventListener('click', event=> {  
